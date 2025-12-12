@@ -1,0 +1,242 @@
+/* App.css - Fully Responsive & Modern Design */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: #f8fafc;
+  color: #1f2937;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header - Fixed & Responsive */
+.app-header {
+  background: #111827;
+  color: white;
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.app-header nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.app-header nav button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.app-header nav button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.app-header nav button.active {
+  background: #3b82f6;
+}
+
+.app-header nav button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Food List - Responsive Grid */
+.food-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 10px 0;
+}
+
+/* Food Card - Beautiful & Responsive */
+.food-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.food-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.food-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.food-card h3 {
+  margin: 16px 16px 8px;
+  font-size: 1.3rem;
+  color: #1f2937;
+}
+
+.food-price {
+  margin: 0 16px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e44d26;
+}
+
+.food-desc {
+  margin: 8px 16px 16px;
+  color: #6b7280;
+  font-size: 0.95rem;
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+.food-card button {
+  margin: 0 16px 16px;
+  padding: 12px;
+  background: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.food-card button:hover {
+  background: #138843;
+}
+
+/* Cart Page - Responsive */
+.cart-page {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.cart-page h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #1f2937;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+
+/* === CAROUSEL STYLES === */
+.carousel-container {
+  margin-bottom: 10px;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-slide {
+  position: relative;
+  height: 320px;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.carousel-overlay {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-overlay h2 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  font-weight: 900;
+}
+
+.carousel-overlay p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+/* Mobile Responsive Carousel */
+@media (max-width: 768px) {
+  .carousel-slide {
+    height: 240px;
+  }
+  .carousel-overlay h2 {
+    font-size: 1.8rem;
+  }
+  .carousel-overlay p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-slide {
+    height: 200px;
+  }
+  .carousel-overlay {
+    bottom: 20px;
+    left: 15px;
+  }
+  .carousel-overlay h2 {
+    font-size: 1.5rem;
+  }
+}
