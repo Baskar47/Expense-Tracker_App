@@ -20,7 +20,7 @@ function Register(){
             const response = await axios.post('http://localhost:5000/auth/register', formData)
 
             if(response.data.success){
-                navigate('/home')
+                navigate('/')
             }else{
                 alert(response.data.message)
             }
