@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./index.css";
-import { api } from "./api";
+import "../index.css";
+import { api } from "../api";
 
-function App() {
+function Home() {
   const [expenses, setExpenses] = useState([]);
   const [form, setForm] = useState({
     title: "",
@@ -294,4 +294,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
